@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
 
     private EditText etDate, etTime;
-    private Button btnSaveAlarm;
 
     private Calendar calendar = Calendar.getInstance();
 
@@ -41,13 +40,12 @@ public class MainActivity extends AppCompatActivity
 
         etDate = (EditText) findViewById(R.id.et_date);
         etTime = (EditText) findViewById(R.id.et_time);
-        btnSaveAlarm = (Button) findViewById(R.id.btn_set_alarm);
+        Button btnSaveAlarm = (Button) findViewById(R.id.btn_set_alarm);
+        btnSaveAlarm.setOnClickListener(v -> _setAlarm());
 
         etTime.setOnClickListener(v -> _selectTime());
 
         etDate.setOnClickListener(v -> _selectDate());
-
-        btnSaveAlarm.setOnClickListener(v -> _setAlarm());
     }
 
     private void _selectTime() {
